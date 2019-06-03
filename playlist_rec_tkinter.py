@@ -17,7 +17,7 @@ matplotlib.use('TkAgg')
 import math
 from matplotlib import pyplot as plt
 
-# Define the functions before calling them
+# Define functions
 def doNothing():
     print("nothing")
 
@@ -92,17 +92,15 @@ def get_input_and_give_recs():
     print(simplify(recs,number_tracks))
     return recs
 
+# Set up tkinter
 root = tk.Tk()
 root.configure(background='dark red')
 root.geometry("1500x900")
 
-tk.Button(root, text='Close',command=root.destroy).grid(row=2, column=2)
+tk.Button(root, text='Close',command=root.destroy, background = "dark red", font=("Helvetica", 16)).grid(row=2, column=2)
 
+tk.Button(root, text='Get Recommendations', command=get_input_and_give_recs, background = "dark red", font=("Helvetica", 16)).grid(row=4, column=2)
 
-# tk.Button(root, text='Graph CA test', command=graph_1).grid(row=3, column=10) # Call the graph_1 function
-tk.Button(root, text='Get Recommendations', command=get_input_and_give_recs, background = "dark red", font=("Helvetica", 16)).grid(row=20, column=20)
-# tk.Button(root, text='Graph Temperature', command=create_temperature_graph).grid(row=5, column=10)
-# tk.Button(root, text='All Graphs', command=create_all_graphs).grid(row=6, column=10)
 
 label1 = Label(root,text = 'Username', background='dark red', font=("Helvetica", 16), fg = "white smoke")
 label1.grid(column = 1, row=1)
@@ -115,7 +113,7 @@ label2 = Label(root, text="Playlist Name", background='dark red', font=("Helveti
 label2.grid(column = 1, row=3)
 label2.config(justify = CENTER)
 
-entry2 = Entry(root, width = 30, background='light grey')
+entry2 = Entry(root, width = 30)
 entry2.grid(column = 1, row=4)
 
 label3 = Label(root, text="Artist 1", background='dark red', font=("Helvetica", 16), fg = "white smoke")
